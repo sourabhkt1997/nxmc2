@@ -59,18 +59,18 @@ blogrouter.delete("/deleteyourblog/:id",async(req,res)=>{
 
 // only for moderator...... 
 
-blogrouter.delete("/deleteblog",authotisation["Moderator"],async(req,res)=>{
+// blogrouter.delete("/deleteblog",authotisation(["Moderator"]),async(req,res)=>{
 
-    try{
-        let {id}=req.params
-        await BlogModel.findByIdAndDelete({_id:id})
-        res.send("blog deleted")
+//     try{
+//         let {id}=req.params
+//         await BlogModel.findByIdAndDelete({_id:id})
+//         res.send("blog deleted")
         
-    }
-    catch(err){
-        res.send(err.message)
-    }
-})
+//     }
+//     catch(err){
+//         res.send(err.message)
+//     }
+// })
 
 
 module.exports={blogrouter}
